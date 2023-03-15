@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var count: Int = 0
+    var countnumber: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,37 +22,37 @@ class MainActivity : AppCompatActivity() {
 
         // Write a message to the database
         val database = Firebase.database
-        val myRef = database.getReference()
+        val myReference = database.getReference()
 
         save.setOnClickListener {
-            var name = PersonName.text.toString()
-            var id = PersonID.text.toString()
-            var age = PersonAge.text.toString()
+            var nameperson = PersonName.text.toString()
+            var idperson = PersonID.text.toString()
+            var ageperson = PersonAge.text.toString()
 
             val person = hashMapOf(
-                "name" to "$name",
-                "id" to "$id",
-                "age" to "$age"
+                "name" to "$nameperson",
+                "id" to "$idperson",
+                "age" to "$ageperson"
             )
 
-            myRef.child("person").child("$count").setValue(person)
-            count++
-            Toast.makeText(applicationContext, "Success", Toast.LENGTH_SHORT).show()
+            myReference.child("person").child("$countnumber").setValue(person)
+            countnumber++
+            Toast.makeText(applicationContext, "SuccessData", Toast.LENGTH_SHORT).show()
         }
 
         get.setOnClickListener {
             // Read from the database
-            myRef.addValueEventListener(object : ValueEventListener {
+            myReference.addValueEventListener(object : ValueEventListener {
 
                 override fun onDataChange(snapshot: DataSnapshot) {
                     // This method is called once with the initial value and again
                     // whenever data at this location is updated.
                     val value = snapshot.getValue()
                     textData.text = value.toString()
-                    Toast.makeText(applicationContext, "Success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "SuccessData", Toast.LENGTH_SHORT).show()
                 }
                 override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(applicationContext, "Error", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "ErrorData", Toast.LENGTH_SHORT).show()
                 }
 
             })
