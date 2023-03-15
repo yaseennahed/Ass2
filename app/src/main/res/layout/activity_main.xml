@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#080"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/PersonID"
+        android:textSize="24sp" android:padding="10dp"
+        android:inputType="text"
+        android:hint="name"
+        android:ems="12"
+        android:layout_marginTop="84dp"
+        android:id="@+id/PersonName"/>
+
+    <Button
+        android:layout_height="55dp"
+        android:layout_width="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20dp"
+        android:id="@+id/get"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Get Data"
+        android:backgroundTint="#52B1DC"
+        android:layout_marginBottom="256dp"/>
+
+    <EditText android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        android:padding="10dp"
+        android:inputType="textPersonName"
+        android:hint=" age"
+        android:ems="12"
+        android:layout_marginTop="24dp"
+        android:id="@+id/PersonAge"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/PersonID"
+        android:layout_marginStart="48dp"/>
+
+    <Button
+        android:layout_height="55dp"
+        android:layout_width="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:layout_marginTop="44dp"
+        android:id="@+id/save"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="save Data"
+        android:backgroundTint="#B63434"
+        app:layout_constraintTop_toBottomOf="@+id/PersonAge"
+        android:layout_marginStart="58dp"/>
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/PersonAge"
+        android:textSize="24sp"
+        android:padding="10dp"
+        android:inputType="number"
+        android:hint="id"
+        android:ems="12"
+        android:layout_marginTop="20dp"
+        android:id="@+id/PersonID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/PersonName"
+        app:layout_constraintTop_toBottomOf="@+id/PersonName"/>
+
+    <TextView
+        android:layout_height="100dp"
+        android:layout_width="330dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="22dp"
+        android:id="@+id/textData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Data"
+        app:layout_constraintTop_toBottomOf="@+id/get"
+        android:textAlignment="center"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
